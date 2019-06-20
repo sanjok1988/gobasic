@@ -3,7 +3,7 @@ package controllers
 import (
 	"github.com/revel/revel"
 	// "golang.org/x/crypto/bcrypt"
-	// "webapp/app/routes"
+	"webapp/app/routes"
 	// "webapp/app/models"
 	
 
@@ -17,6 +17,9 @@ func (c Auth) Login() revel.Result {
 	return c.Render()
 }
 
+func (c Auth) checkUser() revel.Result {
+	return c.Render()
+}
 // func (c AuthController) Authenticate(username, password string, remember bool) revel.Result {
 // 	user := c.getUser(username)
 
@@ -48,3 +51,11 @@ func (c Auth) Login() revel.Result {
 // 	}
 // 	return models.FindOrCreate("guest")
 // }
+
+
+func (c Auth) logout() revel.Result {
+	for k := range c.Session {
+		delete(c.Session, k)
+	}
+	return c.Redirect(routes.App.Index())
+}

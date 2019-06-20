@@ -19,6 +19,7 @@ func InitDB() {
 
     db.DB()
     db.AutoMigrate(&models.Post{})  //creates a table from Post model
+    db.AutoMigrate(&models.User{})
     DB = db //assigns the database handle to "DB" variable so that other files can access the database as "controllers.DB".
 }
 

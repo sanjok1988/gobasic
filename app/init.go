@@ -54,7 +54,7 @@ func init() {
 	 revel.OnAppStart(controllers.InitDB)
 	// revel.OnAppStart(FillCache)
 
-	revel.InterceptMethod((*GorpController).Begin, revel.BEFORE)
+	//revel.InterceptMethod((*GorpController).Begin, revel.BEFORE)
 	// revel.InterceptMethod(Application.AddUser, revel.BEFORE)
 	// revel.InterceptMethod(Hotels.checkUser, revel.BEFORE)
 	// revel.InterceptMethod((*GorpController).Commit, revel.AFTER)
